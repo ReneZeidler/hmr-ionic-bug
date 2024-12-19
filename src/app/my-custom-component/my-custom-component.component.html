@@ -1,0 +1,21 @@
+<p>my-custom-component works!</p>
+<!--
+Testcase 2: Nested custom component
+==================================================
+Uncomment the following text:
+-->
+<!-- <p>TEST 2 (Nested custom component)</p> -->
+<!--
+Observations:
+* The text does NOT appear on the current page
+* The text still does NOT appear after navigating to a different page in the
+  sidebar
+* The text still does NOT appear after a full page reload
+* Forcing a full rebuild of the chunk by changing the corresponding .ts
+  file of this component "bakes" in the current version of the template as
+  the one that is visible after a full page reload
+
+Conclusions:
+* It seems like the nested component is only rendered once across all pages
+  (caching?), and that render uses the outdated version of the template
+-->

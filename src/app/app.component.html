@@ -15,17 +15,20 @@
             </ion-menu-toggle>
           }
         </ion-list>
+        <!--
+        Testcase 3: Outside of ion-router-outlet
+        ==================================================
+        Uncomment the following text:
+        -->
+        <!-- <p>TEST 3 (Outside of ion-router-outlet)</p> -->
+        <!--
+        Observations:
+        * The text DOES appear live on the current page
+        * The text DOES appear after a full page reload
 
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          @for (label of labels; track label) {
-            <ion-item lines="none">
-              <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-              <ion-label>{{ label }}</ion-label>
-            </ion-item>
-          }
-        </ion-list>
+        Conclusions:
+        * HMR works as expected outside of ion-router-outlet
+        -->
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

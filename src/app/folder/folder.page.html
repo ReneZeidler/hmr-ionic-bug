@@ -15,7 +15,32 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p>Current page: {{ folder }}</p>
+    <!--
+    Testcase 1: Page component (directly navigated to)
+    ==================================================
+    Uncomment the following text:
+    -->
+    <!-- <p>TEST 1 (Page component)</p> -->
+    <!--
+    Observations:
+    * The text does NOT appear on the current page
+    * Navigating to a different page in the sidebar causes the text to appear
+    * After navigating back to the first page in the sidebar, the text is still
+      there
+    * After a full page reload the text does NOT appear on the current page
+    * Navigating to a different page causes the text to appear again
+    * Forcing a full rebuild of the chunk by changing the corresponding .ts
+      file of this component "bakes" in the current version of the template as
+      the one that is visible after a full page reload
+
+    Conclusions:
+    * HMR template changes are not applied live to components currently visible
+      on the page
+    * After a full page reload, the first time a component is rendered it uses
+      the original template from the compiled chunk, missing HMR changes
+    * Subsequent renders of the component have the HMR changes applied
+    -->
+    <app-my-custom-component />
   </div>
 </ion-content>
