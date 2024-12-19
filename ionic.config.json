@@ -1,0 +1,7 @@
+{
+  "name": "hmr-ionic-bug",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
